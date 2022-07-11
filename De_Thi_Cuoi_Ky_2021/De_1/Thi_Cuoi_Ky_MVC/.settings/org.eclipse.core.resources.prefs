@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/se/spring/controller/LoginController.java=UTF-8
+encoding//src/main/java/com/se/spring/controller/LopController.java=UTF-8
+encoding//src/main/java/com/se/spring/controller/SinhvienController.java=UTF-8
+encoding//src/main/java/com/se/spring/model/Lop.java=UTF-8
+encoding//src/main/java/com/se/spring/model/Sinhvien.java=UTF-8
+encoding//src/main/java/com/se/spring/service/LopService.java=UTF-8
+encoding//src/main/java/com/se/spring/service/LopServiceRestClientImpl.java=UTF-8
+encoding//src/main/java/com/se/spring/service/SinhvienService.java=UTF-8
+encoding//src/main/java/com/se/spring/service/SinhvienServiceRestClientImpl.java=UTF-8
+encoding//src/main/webapp/WEB-INF/view/fancy-login.jsp=UTF-8

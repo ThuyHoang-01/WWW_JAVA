@@ -1,0 +1,12 @@
+127.0.0.1 - - [25/Mar/2022:10:38:36 +0700] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [25/Mar/2022:10:40:49 +0700] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [25/Mar/2022:10:40:50 +0700] "GET /servletdeno/Serverlet HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [25/Mar/2022:10:40:50 +0700] "GET /favicon.ico HTTP/1.1" 404 684
+0:0:0:0:0:0:0:1 - - [25/Mar/2022:10:41:35 +0700] "GET /servletdeno/Serverlet HTTP/1.1" 200 -
+127.0.0.1 - - [25/Mar/2022:14:13:57 +0700] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [25/Mar/2022:14:16:36 +0700] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [25/Mar/2022:14:16:36 +0700] "GET /JavaServlet/StudentServlet HTTP/1.1" 200 37
+0:0:0:0:0:0:0:1 - - [25/Mar/2022:14:16:36 +0700] "GET /favicon.ico HTTP/1.1" 404 684
+0:0:0:0:0:0:0:1 - - [25/Mar/2022:14:17:04 +0700] "GET /JavaServlet/student-form.html HTTP/1.1" 200 361
+0:0:0:0:0:0:0:1 - - [25/Mar/2022:14:17:12 +0700] "GET /JavaServlet/StudentServlet?firstName=thuy&lastName=thuy HTTP/1.1" 200 37
+127.0.0.1 - - [25/Mar/2022:14:19:08 +0700] "GET / HTTP/1.1" 404 751

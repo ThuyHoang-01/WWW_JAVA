@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/se/nuochoa/config/AppConfig.java=UTF-8
+encoding//src/main/java/com/se/nuochoa/config/SecurityConfig.java=UTF-8
+encoding//src/main/java/com/se/nuochoa/config/SecurityWebApplicationInitializer.java=UTF-8
+encoding//src/main/java/com/se/nuochoa/config/SpringMvcDispatcherServletInitializer.java=UTF-8
+encoding//src/main/java/com/se/nuochoa/controller/AdminController.java=UTF-8
+encoding//src/main/java/com/se/nuochoa/controller/KhachHangController.java=UTF-8
+encoding//src/main/java/com/se/nuochoa/controller/LoginController.java=UTF-8
+encoding//src/main/java/com/se/nuochoa/controller/RegistrationController.java=UTF-8
+encoding//src/main/java/com/se/nuochoa/dao/KhachHangDao.java=UTF-8
+encoding//src/main/java/com/se/nuochoa/dao/KhachHangDaoImpl.java=UTF-8
+encoding//src/main/java/com/se/nuochoa/entity/KhachHang.java=UTF-8
+encoding//src/main/java/com/se/nuochoa/service/KhachHangService.java=UTF-8
+encoding//src/main/java/com/se/nuochoa/service/KhachHangServiceImpl.java=UTF-8
+encoding//src/main/java/com/se/nuochoa/user/CrmUser.java=UTF-8
+encoding//src/main/webapp/WEB-INF/view/admin.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/view/fancy-login.jsp=UTF-8

@@ -1,0 +1,138 @@
+Các annotation của Spring dc dùng trong Project:
+
+1/ @Congiguration: 
+Được sử dụng để chỉ ra rằng class khai báo sử dụng annotation @Configuration sẽ khai báo một hoặc nhiều @Bean method trong class đó. 
+Những class khai báo với @Configuration sẽ được Spring container quản lý và tạo bean trong lúc chương trình đang chạy.
+
+2/ @Bean:
+Method (phương thức) sử dụng @Bean ở phía trên mình để chỉ ra rằng . Method đó sẽ sản xuất ra đối tượng bean và được quản lý bởi spring container .
+
+3/ @ComponentScan:
+Chúng ta sử dụng @ComponentScan để thông báo Spring Container biết phải vào package nào trong dự án để quét các Annotation và tạo Bean. 
+
+4/ @PropertySource:
+Trong Spring chúng ta sử dụng @PropertySource để cho Spring biết tìm các file properties cấu hình cho hệ thống ở đâu.
+
+5/ @Service:
+Nếu một class được đánh dấu là @Service thì nó là kiểu đặt biệt của @Component. 
+Nó được dùng để xử lý các nghiệp vụ của ứng dụng. Ví dụ như kế toán thì có nghiệp vụ là kiểm tra chi, quản lý thu.
+
+6/ @Repository:
+Nếu một class được đánh dấu là @Repository thì nó là kiểu đặt biệt của @Component . 
+Nó được sử dụng để nói bean này dùng để truy cập và thao tác xuống cơ sở dữ liệu. 
+
+7/ @Autowire:
+Tự động nhúng các bean được Spring Container sinh ra vào Class có khai báo @Autowire. 
+Khi Spring nó sẽ tìm kiếm bean có tên là KhachHangDao trong container của nó ,sau đó nhúng (hoặc tiêm) vào lớp KhachHangServiceImpl. 
+Đây chính là cơ chế DI (dependency injection). 
+Khi Spring bắt đầu chạy nó sẽ quét qua các lớp có sử dụng annotation để tạo bean, 
+đồng thời nó cũng quét bên trong các bean xem có khai báo @Autowire không nếu có nó sẽ tìm kiếm bean tương ứng mà nó quản lý và nhúng vào.
+
+8/ @Controller:
+Một class được đánh dấu là @Controller thì để khai báo Class đó là một controller và có nhiệm vụ mapping request trên url vào các method tương ứng trong controller.
+
+9/ @RequestMapping:
+Có nhiệm vụ ánh xạ các request (yêu cầu) người dùng vào method tương ứng trong controller. 
+Ví dụ : Khi ta nhập vào url là http://localhost:8080/list thì nó sẽ được xử lý bởi phương thức là public String ListKhachHang(Model model).
+
+10/ @RequestParam:
+Chúng ta sử dụng @RequestParam để bắt các giá trị các tham số mà người dùng truyền vào trên url theo định dạng key và value.
+
+11/ @ModelAttribute:
+Một trong những annotation quan trọng trong Spring đó là @ModelAttribute. 
+Chúng ta sử dụng ModelAttribute như một cầu nối giữa Controller và View. 
+Từ Controller chúng ta truyền các dữ liệu qua cho View thông qua ModelAttribute. 
+
+12/ @InitBinder:
+Các lớp @Controller hoặc @ControllerAdvice có thể có các phương thức @InitBinder khởi tạo các bản sao của WebDataBinder và những phương thức này có thể:
+Ràng buộc các tham số yêu cầu (nghĩa là dữ liệu biểu mẫu hoặc truy vấn) với một đối tượng mô hình.
+Chuyển đổi các giá trị yêu cầu dựa trên chuỗi (chẳng hạn như tham số yêu cầu, biến đường dẫn, tiêu đề, cookie và các giá trị khác) thành loại đích của đối số phương thức bộ điều khiển.
+
+*-----------------------------------------------------------------------------------
+Giải thích các folder:
+com.se.nuochoa.config:
+Package chứa các class cấu hình Spring, connect DB cho project
+
+com.se.nuochoa.controller:
+Package có nhiệm vụ mapping request trên url vào các method tương ứng trong controller (xem, thêm, xóa, sửa, tìm kiếm...)
+
+com.se.nuochoa.dao:
+Package DAO (Data Access Object) có nhiệm vụ tiếp xúc với mạng lưới hệ thống lưu trữ, hệ quản trị CSDL như thực thi những việc làm 
+liên quan đến lưu trữ và truy vấn dữ liệu ( tìm kiếm, thêm, xóa, sửa, … ) .
+
+com.se.nuochoa.entity:
+Một entity là một Java class tương ứng với một table trong database, mỗi entity object tương ứng với một dòng trong bảng.
+
+com.se.nuochoa.service:
+Package được dùng để xử lý các nghiệp vụ liên quan của ứng dụng
+Ví dụ như quản lý khách hàng thì có nghiệp vụ là xem danh sách khách hàng, thêm, xóa, sửa thông tin khách hàng
+
+com.se.nuochoa.user:
+Package được dùng để quản lý nghiệp vụ đăng nhập vào hệ thống
+
+*-----------------------------------------------------------
+KhacHangController.class
+         |
+		 |
+	@GetMapping("/delete")
+	public String deleteKhachHang(@RequestParam("khachhangId") String theId) {
+		khachHangService.deleteKhachHang(theId);    ----------------------------> Gọi tới khachHangService (Interface xử lý các nghiệp vụ liên quan Khach Hang)
+		return "redirect:/khachhang/list";														|
+	}																							|
+																								|
+																								|
+																				Từ cái interface này, code thực thi sẽ thực hiện ở dưới class khachHangServiceImpl
+																																				|
+																																				|
+																																				|
+																																				|
+																																	Gọi tới khachHangDao (Interface xử lý các thao tác liên quan tới cơ sở dữ liệu Khach Hang)
+																																				|
+																																				|
+																																				|
+																											Từ cái interface này, code thực thi sẽ thực hiện ở dưới class khachHangDaoImpl    
+																								
+*-----------------------------------------------------------
+Thứ tự phát triển code cho chức năng Đăng nhập và Quản lý Khách hàng cho project Nuoc Hoa:
+1/ Cấu hình file pom.xml, add các dependency cần thiết sử dụng cho Project
+
+2/ Tạo các class và develop code cho các class ở package com.se.nuochoa.config: 
+Nội dung bao gồm: 
++ Bật cấu hình SpringwebMVC thông qua annotation @EnableWebMvc, @EnableTransactionManagement
++ Cấu hình ViewResolver
++ Cấu hình connection DB
++ Cấu hình security config, bật cấu hình security thông qua annotation @EnableWebSecurity
++ Cầu hình SpringMvcDispatcherServletInitializer
+
+3/ Tạo các class LoginController và RegistrationController và develop code cho các class LoginController và RegistrationController ở package com.se.nuochoa.controller
+
+4/ Tạo các View cho Login và Register thông qua các file .jsp 
+
+5/ Tạo class và develop code cho class KhachHang ở package com.se.nuochoa.entity
+Nội dung bao gồm: 
++ Tạo các thuộc tính cho KhachHang
++ Tạo contructor, getter, setter
++ Liên kết các thuộc tính với DB thông qua các annotation
++ Tạo ràng buộc data cho các thuộc tính thông qua các annotation
+
+6/ Tạo các class và develop code cho các class ở package com.se.nuochoa.dao
+Nội dung bao gồm: 
++ Tạo interface KhachHangDao với các phương thức xử lý với Database cho Model KhachHang
++ Tạo class KhachHangDaoImpl với các phương thức chi tiết được implements từ interface KhachHangDao dùng để truy cập và thao tác xuống cơ sở dữ liệu
+
+7/ Tạo các class và develop code cho các class ở package com.se.nuochoa.service
+Nội dung bao gồm: 
++ Tạo interface KhachHangService với các phương thức xử lý nghiệp vụ business cho Model KhachHang
++ Tạo class KhachHangServiceImpl với các phương thức chi tiết được implements từ interface KhachHangService
++ Tự động nhúng các Bean liên quan tới KhachHangDao 
+=> Khi Spring nó sẽ tìm kiếm bean có tên là KhachHangDao trong container của nó ,sau đó nhúng (hoặc tiêm) vào lớp KhachHangServiceImpl. Đây chính là cơ chế DI (dependency injection)
+
+8/ Tạo class KhacHangController và develop code cho class KhacHangController ở package com.se.nuochoa.controller
+Nội dung bao gồm: 
++ Tạo các RequestMapping cho từng phương thức xử lý nghiệp vụ quản lý KhachHang
+
+9/ Tạo các View cho nghiệp vụ quản lý KhachHang thông qua các file .jsp 
+
+10/ Xử lý code cho các View cho nghiệp vụ quản lý KhachHang ở các file .jsp bằng cách sử dụng JSTL
+
+

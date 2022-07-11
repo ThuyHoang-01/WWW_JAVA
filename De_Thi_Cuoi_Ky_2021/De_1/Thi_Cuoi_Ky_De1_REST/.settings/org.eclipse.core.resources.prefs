@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/se/spring/dao/LopDAO.java=UTF-8
+encoding//src/main/java/com/se/spring/dao/LopDAOImpl.java=UTF-8
+encoding//src/main/java/com/se/spring/dao/SinhvienDAO.java=UTF-8
+encoding//src/main/java/com/se/spring/dao/SinhvienDAOImpl.java=UTF-8
+encoding//src/main/java/com/se/spring/entity/Lop.java=UTF-8
+encoding//src/main/java/com/se/spring/entity/Sinhvien.java=UTF-8
+encoding//src/main/java/com/se/spring/rest/CustomErrorResponse.java=UTF-8
+encoding//src/main/java/com/se/spring/rest/CustomNotFoundException.java=UTF-8
+encoding//src/main/java/com/se/spring/rest/CustomRestExceptionHandler.java=UTF-8
+encoding//src/main/java/com/se/spring/rest/LopRestController.java=UTF-8
+encoding//src/main/java/com/se/spring/rest/SinhVienRestController.java=UTF-8
+encoding//src/main/java/com/se/spring/service/LopService.java=UTF-8
+encoding//src/main/java/com/se/spring/service/LopServiceImpl.java=UTF-8
+encoding//src/main/java/com/se/spring/service/SinhvienService.java=UTF-8
+encoding//src/main/java/com/se/spring/service/SinhvienServiceImpl.java=UTF-8
